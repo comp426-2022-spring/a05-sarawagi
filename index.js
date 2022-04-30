@@ -64,7 +64,46 @@ app.use((req, res, next) => {
 })
 
 //coinflip functions can go here
+function coinFlip() {
+  //return (Math.floor(Math.random() * 2) == 0) ? 'heads' : 'tails';
+  return Math.random() > .5 ? ("heads") : ("tails")
+  }
+  
+  
+  function coinFlips(flips) {
+    const result = []
+    for(let i = 0; i < flips; i++){
+      result[i] = coinFlip();
+    }
+  return result;
+  }
 
+  
+  function countFlips(array) {
+  let nt = 0;
+  let nh = 0;
+  let length = array.length;
+  for(let i = 0; i < length; i++){
+    if(array[i] == "heads"){
+      nh++;
+    }
+    else if(array[i] == "tails"){
+      nt++;
+    }
+  }
+  return "{ tails: "+ nt +", heads: "+ nh + " }"
+  }
+
+  
+  function flipACoin(call) {
+  let flipresult = coinFlip();
+  if(flipresult == call){
+    return "{ call: '"+call+"', flip: '"+flipresult+"', result: 'win' }"
+  }
+  else if( flipresult != call){
+    return "{ call: '"+call+"', flip: '"+flipresult+"', result: 'lose' }"
+  }
+  }
 
 app.get('/app', (req, res) => {
     res.status(200).end('OK')
