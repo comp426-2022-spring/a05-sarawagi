@@ -16,6 +16,7 @@ async function flipCoin() {
         //coin.disabled = true
     })
 }
+
 // Flip one coin and show coin image to match result when button clicked
 // Flip multiple coins and show coin images in table as well as summary results
 const coins = document.getElementById("coins")
