@@ -32,18 +32,55 @@
       <button id="multinav">Flip multiple coins</button>
       <button id="guessnav">Guess the result</button>
     </nav>
-    <div id="home">
-      
-    </div>    
+    <div id="home" class="active">
+      <h1>Home - Heads or Tails Game</h1>
+        To play the game click one of the buttons above.
+        <ul>
+          <li>Flip One Coin</li>
+          <li>Flip Many Coins</li>
+          <li>Guess Flip</li>
+        </ul>
+      </div>      
     <div id="single" class="hidden">
+      <h1>Flip One Single Coin</h1>
+      <button id="coin" onclick="flipCoin()"> Flip Coin </button>
+      <p><b>Result:</b> <span id="result"></span></p>
+      <img src="./assets/img/coin.png" id="singlecoin">
       
     </div>
     <div id="multi" class="hidden">
-      
+      <h1>Flip multiple coins</h1>
+        <form id="coins">
+				  <label for="number">
+					  <strong>How many coins?</strong>
+			  	</label>
+				<input type="number" name="number" id="number">
+				<input type="submit" value="Flip 'em!">
+			</form>
+			<h2>Results</h2> 
+        <p id="heads"></p>
+			  <p id="tails"></p>
     </div>
     <div id="guess" class="hidden">
-      
+      <h1>Guess a coin flip</h1>
+      <form id="call">
+        <label for="side">Select a side:</label>
+        <select name="guess" id="guess" form="call">
+          <option value="heads">Heads</option>
+          <option value="tails">Tails</option>
+        </select>
+
+        <input type="submit" value="Flip it!">
+      </form>
+      <h2>Results</h2>
+
+      <p><span id="choice"><span></p>
+        <img src="assets/img/coin.png" id="CoinGuessImg" class="bigcoin">   
+      <p><span id="actual"><span></p>
+        <img src="" id="ActualImg" class="bigcoin">   
+      <p><span id="results"><span></p>
     </div>
 	<script src="main.js"></script>
   </body>
 </html>
+
